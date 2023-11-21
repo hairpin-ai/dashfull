@@ -154,7 +154,7 @@ export default function PostItemHorizontal({ post }: Props) {
             router.push(paths.dashboard.post.edit(title));
           }}
         >
-          <Iconify icon="solar:pen-bold" />
+          <Iconify icon="bxs:edit" />
           Edit
         </MenuItem>
 
@@ -164,7 +164,7 @@ export default function PostItemHorizontal({ post }: Props) {
           }}
           sx={{ color: 'error.main' }}
         >
-          <Iconify icon="solar:trash-bin-trash-bold" />
+          <Iconify icon="mdi:trash" />
           Delete
         </MenuItem>
       </CustomPopover>

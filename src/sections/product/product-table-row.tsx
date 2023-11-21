@@ -158,7 +158,7 @@ export default function ProductTableRow({
             popover.onClose();
           }}
         >
-          <Iconify icon="solar:pen-bold" />
+          <Iconify icon="bxs:edit" />
           Edit
         </MenuItem>
 
@@ -169,7 +169,7 @@ export default function ProductTableRow({
           }}
           sx={{ color: 'error.main' }}
         >
-          <Iconify icon="solar:trash-bin-trash-bold" />
+          <Iconify icon="mdi:trash" />
           Delete
         </MenuItem>
       </CustomPopover>

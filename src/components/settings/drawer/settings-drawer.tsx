@@ -47,7 +47,7 @@ export default function SettingsDrawer() {
       <Tooltip title="Reset">
         <IconButton onClick={settings.onReset}>
           <Badge color="error" variant="dot" invisible={!settings.canReset}>
-            <Iconify icon="solar:restart-bold" />
+            <Iconify icon="ri:restart-fill" />
           </Badge>
         </IconButton>
       </Tooltip>

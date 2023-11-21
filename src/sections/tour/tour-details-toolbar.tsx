@@ -68,7 +68,7 @@ export default function TourDetailsToolbar({
 
         <Tooltip title="Edit">
           <IconButton component={RouterLink} href={editLink}>
-            <Iconify icon="solar:pen-bold" />
+            <Iconify icon="bxs:edit" />
           </IconButton>
         </Tooltip>
 

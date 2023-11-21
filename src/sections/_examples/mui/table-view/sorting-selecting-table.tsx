@@ -106,7 +106,7 @@ export default function SortingSelectingTable() {
           action={
             <Tooltip title="Delete">
               <IconButton color="primary">
-                <Iconify icon="solar:trash-bin-trash-bold" />
+                <Iconify icon="mdi:trash" />
               </IconButton>
             </Tooltip>
           }

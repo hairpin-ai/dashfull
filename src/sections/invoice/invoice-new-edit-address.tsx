@@ -55,7 +55,7 @@ export default function InvoiceNewEditAddress() {
             </Typography>
 
             <IconButton onClick={from.onTrue}>
-              <Iconify icon="solar:pen-bold" />
+              <Iconify icon="bxs:edit" />
             </IconButton>
           </Stack>
 
@@ -73,7 +73,7 @@ export default function InvoiceNewEditAddress() {
             </Typography>
 
             <IconButton onClick={to.onTrue}>
-              <Iconify icon={invoiceTo ? 'solar:pen-bold' : 'mingcute:add-line'} />
+              <Iconify icon={invoiceTo ? 'bxs:edit' : 'mingcute:add-line'} />
             </IconButton>
           </Stack>
 

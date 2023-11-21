@@ -73,7 +73,7 @@ export default function CheckoutCartProduct({ row, onDelete, onDecrease, onIncre
 
       <TableCell align="right" sx={{ px: 1 }}>
         <IconButton onClick={onDelete}>
-          <Iconify icon="solar:trash-bin-trash-bold" />
+          <Iconify icon="mdi:trash" />
         </IconButton>
       </TableCell>
     </TableRow>

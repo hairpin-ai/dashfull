@@ -259,7 +259,7 @@ export default function InvoiceNewEditDetails() {
             <Button
               size="small"
               color="error"
-              startIcon={<Iconify icon="solar:trash-bin-trash-bold" />}
+              startIcon={<Iconify icon="mdi:trash" />}
               onClick={() => handleRemove(index)}
             >
               Remove

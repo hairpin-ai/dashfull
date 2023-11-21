@@ -104,7 +104,7 @@ export default function MailDetails({ mail, renderLabel }: Props) {
 
         <Tooltip title="Trash">
           <IconButton>
-            <Iconify icon="solar:trash-bin-trash-bold" />
+            <Iconify icon="mdi:trash" />
           </IconButton>
         </Tooltip>
 
