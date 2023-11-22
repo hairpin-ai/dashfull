@@ -166,6 +166,16 @@ export const paths = {
         edit: `${ROOTS.DASHBOARD}/job/${MOCK_ID}/edit`,
       },
     },
+    org: {
+      root: `${ROOTS.DASHBOARD}/org`,
+      new: `${ROOTS.DASHBOARD}/org/new`,
+      details: (id: string) => `${ROOTS.DASHBOARD}/org/${id}`,
+      edit: (id: string) => `${ROOTS.DASHBOARD}/org/${id}/edit`,
+      demo: {
+        details: `${ROOTS.DASHBOARD}/org/${MOCK_ID}`,
+        edit: `${ROOTS.DASHBOARD}/org/${MOCK_ID}/edit`,
+      },
+    },
     tour: {
       root: `${ROOTS.DASHBOARD}/tour`,
       new: `${ROOTS.DASHBOARD}/tour/new`,

@@ -92,7 +92,7 @@ export default function CalendarFilters({
       <Tooltip title="Reset">
         <IconButton onClick={onResetFilters}>
           <Badge color="error" variant="dot" invisible={!canReset}>
-            <Iconify icon="solar:restart-bold" />
+            <Iconify icon="ri:restart-fill" />
           </Badge>
         </IconButton>
       </Tooltip>

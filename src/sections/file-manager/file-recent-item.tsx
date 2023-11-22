@@ -206,7 +206,7 @@ export default function FileRecentItem({ file, onDelete, sx, ...other }: Props) 
           }}
           sx={{ color: 'error.main' }}
         >
-          <Iconify icon="solar:trash-bin-trash-bold" />
+          <Iconify icon="mdi:trash" />
           Delete
         </MenuItem>
       </CustomPopover>

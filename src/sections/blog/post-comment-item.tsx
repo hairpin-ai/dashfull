@@ -81,7 +81,7 @@ export default function PostCommentItem({
         <Button
           size="small"
           color={reply.value ? 'primary' : 'inherit'}
-          startIcon={<Iconify icon="solar:pen-bold" width={16} />}
+          startIcon={<Iconify icon="bxs:edit" width={16} />}
           onClick={reply.onToggle}
           sx={{ right: 0, position: 'absolute' }}
         >

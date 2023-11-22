@@ -76,7 +76,7 @@ export default function MailNav({
           fullWidth
           color="inherit"
           variant="contained"
-          startIcon={<Iconify icon="solar:pen-bold" />}
+          startIcon={<Iconify icon="bxs:edit" />}
           onClick={onToggleCompose}
         >
           Compose

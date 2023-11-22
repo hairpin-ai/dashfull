@@ -102,7 +102,7 @@ export default function FileManagerTable({
 
               <Tooltip title="Delete">
                 <IconButton color="primary" onClick={onOpenConfirm}>
-                  <Iconify icon="solar:trash-bin-trash-bold" />
+                  <Iconify icon="mdi:trash" />
                 </IconButton>
               </Tooltip>
             </>

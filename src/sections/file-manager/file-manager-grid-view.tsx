@@ -152,7 +152,7 @@ export default function FileManagerGridView({
                   size="small"
                   color="error"
                   variant="contained"
-                  startIcon={<Iconify icon="solar:trash-bin-trash-bold" />}
+                  startIcon={<Iconify icon="mdi:trash" />}
                   onClick={onOpenConfirm}
                   sx={{ mr: 1 }}
                 >

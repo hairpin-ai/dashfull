@@ -72,7 +72,7 @@ export function defaultProps(theme: Theme) {
     MuiAlert: {
       defaultProps: {
         iconMapping: {
-          error: <Iconify icon="solar:danger-bold" width={24} />,
+          error: <Iconify icon="jam:triangle-danger-f" width={24} />,
           info: <Iconify icon="eva:info-fill" width={24} />,
           success: <Iconify icon="eva:checkmark-circle-2-fill" width={24} />,
           warning: <Iconify icon="eva:alert-triangle-fill" width={24} />,
