@@ -7,34 +7,34 @@ import { paths } from 'src/routes/paths';
 import { useSettingsContext } from 'src/components/settings';
 import CustomBreadcrumbs from 'src/components/custom-breadcrumbs';
 
-import JobNewEditForm from '../job-new-edit-form';
+import OrgNewEditForm from '../org-new-edit-form';
 
 // ----------------------------------------------------------------------
 
-export default function JobCreateView() {
+export default function OrgCreateView() {
   const settings = useSettingsContext();
 
   return (
     <Container maxWidth={settings.themeStretch ? false : 'lg'}>
       <CustomBreadcrumbs
-        heading="Create a new job"
+        heading="Create a new org"
         links={[
           {
             name: 'Dashboard',
             href: paths.dashboard.root,
           },
           {
-            name: 'Job',
-            href: paths.dashboard.job.root,
+            name: 'Org',
+            href: paths.dashboard.org.root,
           },
-          { name: 'New job' },
+          { name: 'New org' },
         ]}
         sx={{
           mb: { xs: 3, md: 5 },
         }}
       />
 
-      <JobNewEditForm />
+      <OrgNewEditForm />
     </Container>
   );
 }

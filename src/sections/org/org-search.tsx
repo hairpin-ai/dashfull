@@ -33,7 +33,7 @@ export default function OrgSearch({ query, results, onSearch, hrefItem }: Props)
   const handleKeyUp = (event: React.KeyboardEvent<HTMLInputElement>) => {
     if (query) {
       if (event.key === 'Enter') {
-        const selectProduct = results.filter((org) => org.name === query)[0];
+        const selectProduct = results.filter((org) => org.title === query)[0];
 
         handleClick(selectProduct.id);
       }
@@ -47,7 +47,7 @@ export default function OrgSearch({ query, results, onSearch, hrefItem }: Props)
       popupIcon={null}
       options={results}
       onInputChange={(event, newValue) => onSearch(newValue)}
-      getOptionLabel={(option) => option.name}
+      getOptionLabel={(option) => option.title}
       noOptionsText={<SearchNotFound query={query} sx={{ bgcolor: 'unset' }} />}
       isOptionEqualToValue={(option, value) => option.id === value.id}
       renderInput={(params) => (
@@ -66,8 +66,8 @@ export default function OrgSearch({ query, results, onSearch, hrefItem }: Props)
         />
       )}
       renderOption={(props, org, { inputValue }) => {
-        const matches = match(org.name, inputValue);
-        const parts = parse(org.name, matches);
+        const matches = match(org.title, inputValue);
+        const parts = parse(org.title, matches);
 
         return (
           <Box component="li" {...props} onClick={() => handleClick(org.id)} key={org.id}>

@@ -60,7 +60,7 @@ export default function OrgNewEditForm({ currentOrg }: Props) {
   const { enqueueSnackbar } = useSnackbar();
 
   const NewOrgSchema = Yup.object().shape({
-    name: Yup.string().required('Title is required'),
+    title: Yup.string().required('Title is required'),
     content: Yup.string().required('Content is required'),
     employmentTypes: Yup.array().min(1, 'Choose at least one option'),
     role: Yup.string().required('Role is required'),
@@ -79,7 +79,7 @@ export default function OrgNewEditForm({ currentOrg }: Props) {
 
   const defaultValues = useMemo(
     () => ({
-      name: currentOrg?.name || '',
+      title: currentOrg?.title || '',
       content: currentOrg?.content || '',
       employmentTypes: currentOrg?.employmentTypes || [],
       experience: currentOrg?.experience || '1 year exp',
@@ -136,19 +136,19 @@ export default function OrgNewEditForm({ currentOrg }: Props) {
             Details
           </Typography>
           <Typography variant="body2" sx={{ color: 'text.secondary' }}>
-            Name, short description, image...
+            Title, short description, image...
           </Typography>
         </Grid>
       )}
 
       <Grid xs={12} md={8}>
         <Card>
-          {!mdUp && <CardHeader name="Details" />}
+          {!mdUp && <CardHeader title="Details" />}
 
           <Stack spacing={3} sx={{ p: 3 }}>
             <Stack spacing={1.5}>
               <Typography variant="subtitle2">Name</Typography>
-              <RHFTextField name="name" placeholder="Ex: Software Engineer..." />
+              <RHFTextField name="title" placeholder="Ex: Software Engineer..." />
             </Stack>
 
             <Stack spacing={1.5}>
@@ -176,7 +176,7 @@ export default function OrgNewEditForm({ currentOrg }: Props) {
 
       <Grid xs={12} md={8}>
         <Card>
-          {!mdUp && <CardHeader name="Properties" />}
+          {!mdUp && <CardHeader title="Properties" />}
 
           <Stack spacing={3} sx={{ p: 3 }}>
             <Stack spacing={1}>

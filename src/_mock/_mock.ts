@@ -14,7 +14,7 @@ import {
   _nativeL,
   _percents,
   _booleans,
-  _orgNames,
+  _orgTitles,
   _sentences,
   _lastNames,
   _fullNames,
@@ -54,7 +54,7 @@ export const _mock = {
   lastName: (index: number) => _lastNames[index],
   fullName: (index: number) => _fullNames[index],
   companyName: (index: number) => _companyNames[index],
-  orgName: (index: number) => _orgNames[index],
+  orgTitle: (index: number) => _orgTitles[index],
   // Number
   number: {
     percent: (index: number) => _percents[index],

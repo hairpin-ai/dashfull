@@ -23,7 +23,7 @@ type Props = {
 
 export default function OrgDetailsContent({ org }: Props) {
   const {
-    name,
+    title,
     skills,
     salary,
     content,
@@ -36,7 +36,7 @@ export default function OrgDetailsContent({ org }: Props) {
 
   const renderContent = (
     <Stack component={Card} spacing={3} sx={{ p: 3 }}>
-      <Typography variant="h4">{name}</Typography>
+      <Typography variant="h4">{title}</Typography>
 
       <Markdown children={content} />
 
