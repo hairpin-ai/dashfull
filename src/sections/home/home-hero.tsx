@@ -189,8 +189,7 @@ export default function HomeHero() {
             textAlign: 'center',
           }}
         >
-          Start a <br />
-          New Project with
+          Stage
         </Typography>
       </m.div>
 
@@ -204,7 +203,7 @@ export default function HomeHero() {
             repeat: Infinity,
           }}
         >
-          Minimal
+          hairpin
         </StyledTextGradient>
       </m.div>
 

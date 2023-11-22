@@ -50,7 +50,7 @@ export default function SnackbarProvider({ children }: Props) {
         ),
         error: (
           <StyledIcon color="error">
-            <Iconify icon="solar:danger-bold" width={24} />
+            <Iconify icon="jam:triangle-danger-f" width={24} />
           </StyledIcon>
         ),
       }}

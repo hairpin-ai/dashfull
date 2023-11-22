@@ -386,7 +386,7 @@ export default function InvoiceListView() {
 
                   <Tooltip title="Delete">
                     <IconButton color="primary" onClick={confirm.onTrue}>
-                      <Iconify icon="solar:trash-bin-trash-bold" />
+                      <Iconify icon="mdi:trash" />
                     </IconButton>
                   </Tooltip>
                 </Stack>

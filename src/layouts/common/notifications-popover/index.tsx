@@ -145,7 +145,7 @@ export default function NotificationsPopover() {
         onClick={drawer.onTrue}
       >
         <Badge badgeContent={totalUnRead} color="error">
-          <Iconify icon="solar:bell-bing-bold-duotone" width={24} />
+          <Iconify icon="ri:notification-4-fill" width={24} />
         </Badge>
       </IconButton>
 
@@ -172,7 +172,7 @@ export default function NotificationsPopover() {
         >
           {renderTabs}
           <IconButton onClick={handleMarkAllAsRead}>
-            <Iconify icon="solar:settings-bold-duotone" />
+            <Iconify icon="ri:settings-4-fill" />
           </IconButton>
         </Stack>
 

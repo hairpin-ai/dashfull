@@ -22,6 +22,20 @@ declare module '@mui/material/styles/createPalette' {
 
 export const grey = {
   0: '#FFFFFF',
+  50: '#E7EAF1',
+  100: '#C3CBDE',
+  200: '#9CAAC7',
+  300: '#7789B1',
+  400: '#5970A1',
+  500: '#3B5893',
+  600: '#35508A',
+  700: '#2C477F',
+  800: '#263D72',
+  900: '#1C2D5A',
+};
+
+export const gray = {
+  0: '#FFFFFF',
   100: '#F9FAFB',
   200: '#F4F6F8',
   300: '#DFE3E8',
@@ -34,20 +48,20 @@ export const grey = {
 };
 
 export const primary = {
-  lighter: '#C8FAD6',
-  light: '#5BE49B',
-  main: '#00A76F',
-  dark: '#007867',
-  darker: '#004B50',
+  lighter: '#D9FFFF',
+  light: '#69FBEF',
+  main: '#28DAC8',
+  dark: '#2CBCA8',
+  darker: '#218B77',
   contrastText: '#FFFFFF',
 };
 
 export const secondary = {
-  lighter: '#EFD6FF',
-  light: '#C684FF',
-  main: '#8E33FF',
-  dark: '#5119B7',
-  darker: '#27097A',
+  lighter: '#AFFCFF',
+  light: '#65C4E0',
+  main: '#0B9DBC',
+  dark: '#007892',
+  darker: '#004D63',
   contrastText: '#FFFFFF',
 };
 
@@ -94,7 +108,7 @@ export const common = {
 
 export const action = {
   hover: alpha(grey[500], 0.08),
-  selected: alpha(grey[500], 0.16),
+  selected: alpha(grey[500], 0.04),
   disabled: alpha(grey[500], 0.8),
   disabledBackground: alpha(grey[500], 0.24),
   focus: alpha(grey[500], 0.24),

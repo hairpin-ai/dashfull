@@ -259,7 +259,7 @@ export default function FileManagerFileDetails({
             variant="soft"
             color="error"
             size="large"
-            startIcon={<Iconify icon="solar:trash-bin-trash-bold" />}
+            startIcon={<Iconify icon="mdi:trash" />}
             onClick={onDelete}
           >
             Delete

@@ -288,7 +288,7 @@ function ControlsPanel({ config, onChangeConfig, canReset, onReset }: ControlsPa
         {canReset && (
           <IconButton onClick={onReset}>
             <Badge color="error" variant="dot" invisible={!canReset}>
-              <Iconify icon="solar:restart-bold" />
+              <Iconify icon="ri:restart-fill" />
             </Badge>
           </IconButton>
         )}

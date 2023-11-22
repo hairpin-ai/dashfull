@@ -59,7 +59,7 @@ export default function TooltipView() {
           <ComponentBlock title="Simple">
             <Tooltip title="Delete">
               <IconButton>
-                <Iconify icon="solar:trash-bin-trash-bold" width={24} />
+                <Iconify icon="mdi:trash" width={24} />
               </IconButton>
             </Tooltip>
 
@@ -71,7 +71,7 @@ export default function TooltipView() {
 
             <Tooltip title="Delete">
               <IconButton color="info">
-                <Iconify icon="solar:trash-bin-trash-bold" width={24} />
+                <Iconify icon="mdi:trash" width={24} />
               </IconButton>
             </Tooltip>
 

@@ -85,7 +85,7 @@ export default function OrderDetailsItems({
         title="Details"
         action={
           <IconButton>
-            <Iconify icon="solar:pen-bold" />
+            <Iconify icon="bxs:edit" />
           </IconButton>
         }
       />

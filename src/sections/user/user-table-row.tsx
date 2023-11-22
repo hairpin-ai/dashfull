@@ -88,7 +88,7 @@ export default function UserTableRow({
         <TableCell align="right" sx={{ px: 1, whiteSpace: 'nowrap' }}>
           <Tooltip title="Quick Edit" placement="top" arrow>
             <IconButton color={quickEdit.value ? 'inherit' : 'default'} onClick={quickEdit.onTrue}>
-              <Iconify icon="solar:pen-bold" />
+              <Iconify icon="bxs:edit" />
             </IconButton>
           </Tooltip>
 
@@ -113,7 +113,7 @@ export default function UserTableRow({
           }}
           sx={{ color: 'error.main' }}
         >
-          <Iconify icon="solar:trash-bin-trash-bold" />
+          <Iconify icon="mdi:trash" />
           Delete
         </MenuItem>
 
@@ -123,7 +123,7 @@ export default function UserTableRow({
             popover.onClose();
           }}
         >
-          <Iconify icon="solar:pen-bold" />
+          <Iconify icon="bxs:edit" />
           Edit
         </MenuItem>
       </CustomPopover>

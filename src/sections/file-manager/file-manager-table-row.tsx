@@ -245,7 +245,7 @@ export default function FileManagerTableRow({ row, selected, onSelectRow, onDele
           }}
           sx={{ color: 'error.main' }}
         >
-          <Iconify icon="solar:trash-bin-trash-bold" />
+          <Iconify icon="mdi:trash" />
           Delete
         </MenuItem>
       </CustomPopover>
