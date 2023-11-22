@@ -172,6 +172,12 @@ export const _lastNames = [
   'Parisian',
 ];
 
+export const _orgTitles = [
+  'Organization Local One',
+  'Organization Local Two',
+  'Organization Local Three',
+];
+
 // ----------------------------------------------------------------------
 
 export const _prices = [

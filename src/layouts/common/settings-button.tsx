@@ -54,7 +54,7 @@ export default function SettingsButton({ sx }: Props) {
             height: 40,
           }}
         >
-          <Iconify icon="solar:settings-bold-duotone" width={24} />
+          <Iconify icon="ri:settings-4-fill" width={24} />
         </IconButton>
       </Box>
     </Badge>

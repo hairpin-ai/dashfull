@@ -63,12 +63,12 @@ export default function PaymentCardItem({ card, sx, ...other }: PaymentItemProps
         </MenuItem>
 
         <MenuItem onClick={popover.onClose}>
-          <Iconify icon="solar:pen-bold" />
+          <Iconify icon="bxs:edit" />
           Edit
         </MenuItem>
 
         <MenuItem onClick={popover.onClose} sx={{ color: 'error.main' }}>
-          <Iconify icon="solar:trash-bin-trash-bold" />
+          <Iconify icon="mdi:trash" />
           Delete
         </MenuItem>
       </CustomPopover>

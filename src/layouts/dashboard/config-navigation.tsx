@@ -6,12 +6,13 @@ import { useTranslate } from 'src/locales';
 
 import Label from 'src/components/label';
 import Iconify from 'src/components/iconify';
-import SvgColor from 'src/components/svg-color';
 
 // ----------------------------------------------------------------------
 
 const icon = (name: string) => (
-  <SvgColor src={`/assets/icons/navbar/${name}.svg`} sx={{ width: 1, height: 1 }} />
+  // <SvgColor src={`/assets/icons/navbar/${name}.svg`} sx={{ width: 1, height: 1 }} />
+  <Iconify icon={`${name}`} />
+
   // OR
   // <Iconify icon="fluent:mail-24-filled" />
   // https://icon-sets.iconify.design/solar/
@@ -19,30 +20,30 @@ const icon = (name: string) => (
 );
 
 const ICONS = {
-  job: icon('ic_job'),
-  blog: icon('ic_blog'),
-  chat: icon('ic_chat'),
-  mail: icon('ic_mail'),
-  user: icon('ic_user'),
-  file: icon('ic_file'),
-  lock: icon('ic_lock'),
-  tour: icon('ic_tour'),
-  order: icon('ic_order'),
-  label: icon('ic_label'),
-  blank: icon('ic_blank'),
-  kanban: icon('ic_kanban'),
-  folder: icon('ic_folder'),
-  banking: icon('ic_banking'),
-  booking: icon('ic_booking'),
-  invoice: icon('ic_invoice'),
-  product: icon('ic_product'),
-  calendar: icon('ic_calendar'),
-  disabled: icon('ic_disabled'),
-  external: icon('ic_external'),
-  menuItem: icon('ic_menu_item'),
-  ecommerce: icon('ic_ecommerce'),
-  analytics: icon('ic_analytics'),
-  dashboard: icon('ic_dashboard'),
+  job: icon('mingcute:briefcase-fill'),
+  blog: icon('mdi:blog-outline'),
+  chat: icon('material-symbols:chat'),
+  mail: icon('material-symbols:mail'),
+  user: icon('mdi:user'),
+  file: icon('mdi:file-outline'),
+  lock: icon('ri:shield-keyhole-fill'),
+  tour: icon('material-symbols:tour'),
+  order: icon('la:file-invoice'),
+  label: icon('uil:label-alt'),
+  blank: icon('lets-icons:blank'),
+  kanban: icon('ri:dashboard-fill'),
+  folder: icon('material-symbols:folder'),
+  banking: icon('mdi:bank'),
+  booking: icon('mdi:calendar'),
+  invoice: icon('fa-solid:file-invoice-dollar'),
+  product: icon('uil:box'),
+  calendar: icon('tabler:calendar'),
+  disabled: icon('fe:disabled'),
+  external: icon('gg:external'),
+  menuItem: icon('material-symbols:menu'),
+  ecommerce: icon('ic:sharp-shopping-bag'),
+  analytics: icon('material-symbols:analytics'),
+  dashboard: icon('material-symbols:dashboard'),
 };
 
 // ----------------------------------------------------------------------
@@ -52,8 +53,56 @@ export function useNavData() {
 
   const data = useMemo(
     () => [
+      // Systems
+      // ----------------------------------------------------------------------
+      {
+        subheader: 'Systems',
+        items: [
+          {
+            title: 'Dashboard',
+            path: paths.dashboard.root,
+            icon: <Iconify icon="pixelarticons:chart-add" sx={{ width: 1, height: 1 }} />,
+          },
+          {
+            title: 'Systems',
+            path: paths.dashboard.general.ecommerce,
+            icon: <Iconify icon="grommet-icons:cubes" sx={{ width: 1, height: 1 }} />,
+          },
+        ],
+      },
+
+      // My Organization
+      // ----------------------------------------------------------------------
+
+      {
+        subheader: 'My Organization',
+        items: [
+          {
+            title: 'Information',
+            path: paths.dashboard.root,
+            icon: <Iconify icon="ri:profile-fill" sx={{ width: 1, height: 1 }} />,
+          },
+          {
+            title: 'Team',
+            path: paths.dashboard.general.ecommerce,
+            icon: <Iconify icon="clarity:users-solid" sx={{ width: 1, height: 1 }} />,
+          },
+          {
+            title: 'Plans',
+            path: paths.dashboard.general.ecommerce,
+            icon: <Iconify icon="ri:stack-fill" sx={{ width: 1, height: 1 }} />,
+          },
+          {
+            title: 'Transfers',
+            path: paths.dashboard.general.ecommerce,
+            icon: <Iconify icon="ri:exchange-box-fill" sx={{ width: 1, height: 1 }} />,
+          },
+        ],
+      },
+
       // OVERVIEW
       // ----------------------------------------------------------------------
+
       {
         subheader: t('overview'),
         items: [

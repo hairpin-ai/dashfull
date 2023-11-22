@@ -121,7 +121,7 @@ export default function ChatMessageItem({ message, participants, onOpenLightbox 
         <Iconify icon="eva:smiling-face-fill" width={16} />
       </IconButton>
       <IconButton size="small">
-        <Iconify icon="solar:trash-bin-trash-bold" width={16} />
+        <Iconify icon="mdi:trash" width={16} />
       </IconButton>
     </Stack>
   );

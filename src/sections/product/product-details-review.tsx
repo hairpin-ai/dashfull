@@ -111,7 +111,7 @@ export default function ProductDetailsReview({
         variant="soft"
         color="inherit"
         onClick={review.onTrue}
-        startIcon={<Iconify icon="solar:pen-bold" />}
+        startIcon={<Iconify icon="bxs:edit" />}
       >
         Write your review
       </Button>

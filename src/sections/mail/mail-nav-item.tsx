@@ -11,9 +11,9 @@ import { IMailLabel } from 'src/types/mail';
 const LABEL_ICONS = {
   all: 'fluent:mail-24-filled',
   inbox: 'solar:inbox-bold',
-  trash: 'solar:trash-bin-trash-bold',
+  trash: 'mdi:trash',
   drafts: 'solar:file-text-bold',
-  spam: 'solar:danger-bold',
+  spam: 'jam:triangle-danger-f',
   sent: 'iconamoon:send-fill',
   starred: 'eva:star-fill',
   important: 'material-symbols:label-important-rounded',

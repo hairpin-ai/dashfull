@@ -92,7 +92,7 @@ export default function FileManagerInvitedItem({ person }: Props) {
               handleChangePermission('edit');
             }}
           >
-            <Iconify icon="solar:pen-bold" />
+            <Iconify icon="bxs:edit" />
             Can edit
           </MenuItem>
 
@@ -104,7 +104,7 @@ export default function FileManagerInvitedItem({ person }: Props) {
             }}
             sx={{ color: 'error.main' }}
           >
-            <Iconify icon="solar:trash-bin-trash-bold" />
+            <Iconify icon="mdi:trash" />
             Remove
           </MenuItem>
         </>

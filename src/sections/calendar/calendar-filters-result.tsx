@@ -85,11 +85,7 @@ export default function CalendarFiltersResult({
         )}
 
         {canReset && (
-          <Button
-            color="error"
-            onClick={onResetFilters}
-            startIcon={<Iconify icon="solar:trash-bin-trash-bold" />}
-          >
+          <Button color="error" onClick={onResetFilters} startIcon={<Iconify icon="mdi:trash" />}>
             Clear
           </Button>
         )}

@@ -116,7 +116,7 @@ export default function OrderTableToolbar({
             color="error"
             sx={{ flexShrink: 0 }}
             onClick={onResetFilters}
-            startIcon={<Iconify icon="solar:trash-bin-trash-bold" />}
+            startIcon={<Iconify icon="mdi:trash" />}
           >
             Clear
           </Button>

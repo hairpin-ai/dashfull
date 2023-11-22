@@ -92,7 +92,7 @@ export default function KanbanColumnToolBar({
         }}
       >
         <MenuItem onClick={popover.onClose}>
-          <Iconify icon="solar:pen-bold" />
+          <Iconify icon="bxs:edit" />
           Rename
         </MenuItem>
 
@@ -113,7 +113,7 @@ export default function KanbanColumnToolBar({
           }}
           sx={{ color: 'error.main' }}
         >
-          <Iconify icon="solar:trash-bin-trash-bold" />
+          <Iconify icon="mdi:trash" />
           Delete
         </MenuItem>
       </CustomPopover>

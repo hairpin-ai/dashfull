@@ -1,8 +1,11 @@
 import { useEffect } from 'react';
 
 import Box from '@mui/material/Box';
+import Link from '@mui/material/Link';
 import Stack from '@mui/material/Stack';
 import Drawer from '@mui/material/Drawer';
+import Container from '@mui/material/Container';
+import Typography from '@mui/material/Typography';
 
 import { usePathname } from 'src/routes/hooks';
 
@@ -14,9 +17,9 @@ import Scrollbar from 'src/components/scrollbar';
 import { NavSectionVertical } from 'src/components/nav-section';
 
 import { NAV } from '../config-layout';
-import NavUpgrade from '../common/nav-upgrade';
 import { useNavData } from './config-navigation';
 import NavToggleButton from '../common/nav-toggle-button';
+import OrganizationPopover from '../common/organization-popover';
 
 // ----------------------------------------------------------------------
 
@@ -52,18 +55,47 @@ export default function NavVertical({ openNav, onCloseNav }: Props) {
         },
       }}
     >
-      <Logo sx={{ mt: 3, ml: 4, mb: 1 }} />
-
+      <Stack
+        mt={0}
+        p={2}
+        flexGrow={0}
+        direction="column"
+        alignItems="center"
+        justifyContent="flex-start"
+        spacing={{ xs: 0.5, sm: 1 }}
+      >
+        <OrganizationPopover />
+      </Stack>
+      <Box sx={{ mt: 0 }} />
       <NavSectionVertical
         data={navData}
         slotProps={{
           currentRole: user?.role,
         }}
       />
+      <Box sx={{ flexGrow: 8 }} />
 
-      <Box sx={{ flexGrow: 1 }} />
+      {/* <NavUpgrade /> */}
+      <Box
+        sx={{
+          py: 5,
+          textAlign: 'center',
+          position: 'relative',
+          bgcolor: 'background.default',
+        }}
+      >
+        <Container>
+          <Logo sx={{ mb: 1, mx: 'auto' }} />
 
-      <NavUpgrade />
+          <Typography variant="caption" component="div">
+            © All rights reserved
+            <br /> made by
+            <Link href="https://hairpin.ai/"> hairpin.ai </Link>
+          </Typography>
+        </Container>
+      </Box>
+
+      {/* <NavUpgrade /> */}
     </Scrollbar>
   );
 

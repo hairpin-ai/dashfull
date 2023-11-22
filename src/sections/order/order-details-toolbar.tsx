@@ -97,7 +97,7 @@ export default function OrderDetailsToolbar({
             Print
           </Button>
 
-          <Button color="inherit" variant="contained" startIcon={<Iconify icon="solar:pen-bold" />}>
+          <Button color="inherit" variant="contained" startIcon={<Iconify icon="bxs:edit" />}>
             Edit
           </Button>
         </Stack>

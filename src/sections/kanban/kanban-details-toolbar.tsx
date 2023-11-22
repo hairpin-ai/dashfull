@@ -83,7 +83,7 @@ export default function KanbanDetailsToolbar({
 
           <Tooltip title="Delete task">
             <IconButton onClick={confirm.onTrue}>
-              <Iconify icon="solar:trash-bin-trash-bold" />
+              <Iconify icon="mdi:trash" />
             </IconButton>
           </Tooltip>
 

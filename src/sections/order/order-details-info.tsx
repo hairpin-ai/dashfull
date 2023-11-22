@@ -34,7 +34,7 @@ export default function OrderDetailsInfo({ customer, delivery, payment, shipping
         title="Customer Info"
         action={
           <IconButton>
-            <Iconify icon="solar:pen-bold" />
+            <Iconify icon="bxs:edit" />
           </IconButton>
         }
       />
@@ -76,7 +76,7 @@ export default function OrderDetailsInfo({ customer, delivery, payment, shipping
         title="Delivery"
         action={
           <IconButton>
-            <Iconify icon="solar:pen-bold" />
+            <Iconify icon="bxs:edit" />
           </IconButton>
         }
       />
@@ -111,7 +111,7 @@ export default function OrderDetailsInfo({ customer, delivery, payment, shipping
         title="Shipping"
         action={
           <IconButton>
-            <Iconify icon="solar:pen-bold" />
+            <Iconify icon="bxs:edit" />
           </IconButton>
         }
       />
@@ -139,7 +139,7 @@ export default function OrderDetailsInfo({ customer, delivery, payment, shipping
         title="Payment"
         action={
           <IconButton>
-            <Iconify icon="solar:pen-bold" />
+            <Iconify icon="bxs:edit" />
           </IconButton>
         }
       />

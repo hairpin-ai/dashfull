@@ -60,7 +60,7 @@ export default function InvoiceToolbar({
         <Stack direction="row" spacing={1} flexGrow={1} sx={{ width: 1 }}>
           <Tooltip title="Edit">
             <IconButton onClick={handleEdit}>
-              <Iconify icon="solar:pen-bold" />
+              <Iconify icon="bxs:edit" />
             </IconButton>
           </Tooltip>
 
