@@ -5,9 +5,7 @@ import Button from '@mui/material/Button';
 import MenuItem from '@mui/material/MenuItem';
 import ListItemText from '@mui/material/ListItemText';
 
-import { fToNow } from 'src/utils/format-time';
-
-import { _contacts } from 'src/_mock';
+import { _orgs } from 'src/_mock/_org';
 
 import Iconify from 'src/components/iconify';
 import Scrollbar from 'src/components/scrollbar';
@@ -37,7 +35,7 @@ export default function OrganizationPopover() {
           justifyContent: 'space-between',
         }}
       >
-        {_contacts[0].name}
+        {_orgs[1].name}
       </Button>
 
       <CustomPopover
@@ -60,19 +58,10 @@ export default function OrganizationPopover() {
         </Box>
 
         <Scrollbar sx={{ height: 320 }}>
-          {_contacts.map((contact) => (
-            <MenuItem key={contact.id} sx={{ p: 1.5 }}>
-              {/* <Badge
-                variant={contact.status as 'alway' | 'online' | 'busy' | 'offline'}
-                anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }}
-                sx={{ mr: 2 }}
-              >
-                <Avatar alt={contact.name} src={contact.avatarUrl} />
-          </Badge> */}
-
+          {_orgs.map((org) => (
+            <MenuItem key={org.id} sx={{ p: 1.5 }}>
               <ListItemText
-                primary={contact.name}
-                secondary={contact.status === 'offline' ? fToNow(contact.lastActivity) : ''}
+                primary={org.name}
                 primaryTypographyProps={{ typography: 'subtitle2' }}
                 secondaryTypographyProps={{
                   typography: 'caption',
