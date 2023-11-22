@@ -15,12 +15,12 @@ import { useBoolean } from 'src/hooks/use-boolean';
 
 import { countries } from 'src/assets/data';
 import {
-  _jobs,
+  _orgs,
   _roles,
-  JOB_SORT_OPTIONS,
-  JOB_BENEFIT_OPTIONS,
-  JOB_EXPERIENCE_OPTIONS,
-  JOB_EMPLOYMENT_TYPE_OPTIONS,
+  ORG_SORT_OPTIONS,
+  ORG_BENEFIT_OPTIONS,
+  ORG_EXPERIENCE_OPTIONS,
+  ORG_EMPLOYMENT_TYPE_OPTIONS,
 } from 'src/_mock';
 
 import Iconify from 'src/components/iconify';
@@ -28,17 +28,17 @@ import EmptyContent from 'src/components/empty-content';
 import { useSettingsContext } from 'src/components/settings';
 import CustomBreadcrumbs from 'src/components/custom-breadcrumbs';
 
-import { IJobItem, IJobFilters, IJobFilterValue } from 'src/types/job';
+import { IOrgItem, IOrgFilters, IOrgFilterValue } from 'src/types/org';
 
-import JobList from '../job-list';
-import JobSort from '../job-sort';
-import JobSearch from '../job-search';
-import JobFilters from '../job-filters';
-import JobFiltersResult from '../job-filters-result';
+import OrgList from '../org-list';
+import OrgSort from '../org-sort';
+import OrgSearch from '../org-search';
+import OrgFilters from '../org-filters';
+import OrgFiltersResult from '../org-filters-result';
 
 // ----------------------------------------------------------------------
 
-const defaultFilters: IJobFilters = {
+const defaultFilters: IOrgFilters = {
   roles: [],
   locations: [],
   benefits: [],
@@ -48,14 +48,14 @@ const defaultFilters: IJobFilters = {
 
 // ----------------------------------------------------------------------
 
-export default function JobListView() {
+export default function OrgListView() {
   const settings = useSettingsContext();
 
   const openFilters = useBoolean();
 
   const [sortBy, setSortBy] = useState('latest');
 
-  const [search, setSearch] = useState<{ query: string; results: IJobItem[] }>({
+  const [search, setSearch] = useState<{ query: string; results: IOrgItem[] }>({
     query: '',
     results: [],
   });
@@ -63,7 +63,7 @@ export default function JobListView() {
   const [filters, setFilters] = useState(defaultFilters);
 
   const dataFiltered = applyFilter({
-    inputData: _jobs,
+    inputData: _orgs,
     filters,
     sortBy,
   });
@@ -72,7 +72,7 @@ export default function JobListView() {
 
   const notFound = !dataFiltered.length && canReset;
 
-  const handleFilters = useCallback((name: string, value: IJobFilterValue) => {
+  const handleFilters = useCallback((name: string, value: IOrgFilterValue) => {
     setFilters((prevState) => ({
       ...prevState,
       [name]: value,
@@ -91,8 +91,8 @@ export default function JobListView() {
       }));
 
       if (inputValue) {
-        const results = _jobs.filter(
-          (job) => job.title.toLowerCase().indexOf(search.query.toLowerCase()) !== -1
+        const results = _orgs.filter(
+          (org) => org.title.toLowerCase().indexOf(search.query.toLowerCase()) !== -1
         );
 
         setSearch((prevState) => ({
@@ -115,15 +115,15 @@ export default function JobListView() {
       alignItems={{ xs: 'flex-end', sm: 'center' }}
       direction={{ xs: 'column', sm: 'row' }}
     >
-      <JobSearch
+      <OrgSearch
         query={search.query}
         results={search.results}
         onSearch={handleSearch}
-        hrefItem={(id: string) => paths.dashboard.job.details(id)}
+        hrefItem={(id: string) => paths.dashboard.org.details(id)}
       />
 
       <Stack direction="row" spacing={1} flexShrink={0}>
-        <JobFilters
+        <OrgFilters
           open={openFilters.value}
           onOpen={openFilters.onTrue}
           onClose={openFilters.onFalse}
@@ -136,18 +136,18 @@ export default function JobListView() {
           //
           locationOptions={countries}
           roleOptions={_roles}
-          benefitOptions={JOB_BENEFIT_OPTIONS.map((option) => option.label)}
-          experienceOptions={['all', ...JOB_EXPERIENCE_OPTIONS.map((option) => option.label)]}
-          employmentTypeOptions={JOB_EMPLOYMENT_TYPE_OPTIONS.map((option) => option.label)}
+          benefitOptions={ORG_BENEFIT_OPTIONS.map((option) => option.label)}
+          experienceOptions={['all', ...ORG_EXPERIENCE_OPTIONS.map((option) => option.label)]}
+          employmentTypeOptions={ORG_EMPLOYMENT_TYPE_OPTIONS.map((option) => option.label)}
         />
 
-        <JobSort sort={sortBy} onSort={handleSortBy} sortOptions={JOB_SORT_OPTIONS} />
+        <OrgSort sort={sortBy} onSort={handleSortBy} sortOptions={ORG_SORT_OPTIONS} />
       </Stack>
     </Stack>
   );
 
   const renderResults = (
-    <JobFiltersResult
+    <OrgFiltersResult
       filters={filters}
       onResetFilters={handleResetFilters}
       //
@@ -165,19 +165,19 @@ export default function JobListView() {
         links={[
           { name: 'Dashboard', href: paths.dashboard.root },
           {
-            name: 'Job',
-            href: paths.dashboard.job.root,
+            name: 'Org',
+            href: paths.dashboard.org.root,
           },
           { name: 'List' },
         ]}
         action={
           <Button
             component={RouterLink}
-            href={paths.dashboard.job.new}
+            href={paths.dashboard.org.new}
             variant="contained"
             startIcon={<Iconify icon="mingcute:add-line" />}
           >
-            New Job
+            New Org
           </Button>
         }
         sx={{
@@ -198,7 +198,7 @@ export default function JobListView() {
 
       {notFound && <EmptyContent filled title="No Data" sx={{ py: 10 }} />}
 
-      <JobList jobs={dataFiltered} />
+      <OrgList orgs={dataFiltered} />
     </Container>
   );
 }
@@ -210,8 +210,8 @@ const applyFilter = ({
   filters,
   sortBy,
 }: {
-  inputData: IJobItem[];
-  filters: IJobFilters;
+  inputData: IOrgItem[];
+  filters: IOrgFilters;
   sortBy: string;
 }) => {
   const { employmentTypes, experience, roles, locations, benefits } = filters;
@@ -231,25 +231,25 @@ const applyFilter = ({
 
   // FILTERS
   if (employmentTypes.length) {
-    inputData = inputData.filter((job) =>
-      job.employmentTypes.some((item) => employmentTypes.includes(item))
+    inputData = inputData.filter((org) =>
+      org.employmentTypes.some((item) => employmentTypes.includes(item))
     );
   }
 
   if (experience !== 'all') {
-    inputData = inputData.filter((job) => job.experience === experience);
+    inputData = inputData.filter((org) => org.experience === experience);
   }
 
   if (roles.length) {
-    inputData = inputData.filter((job) => roles.includes(job.role));
+    inputData = inputData.filter((org) => roles.includes(org.role));
   }
 
   if (locations.length) {
-    inputData = inputData.filter((job) => job.locations.some((item) => locations.includes(item)));
+    inputData = inputData.filter((org) => org.locations.some((item) => locations.includes(item)));
   }
 
   if (benefits.length) {
-    inputData = inputData.filter((job) => job.benefits.some((item) => benefits.includes(item)));
+    inputData = inputData.filter((org) => org.benefits.some((item) => benefits.includes(item)));
   }
 
   return inputData;

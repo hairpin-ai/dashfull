@@ -162,7 +162,7 @@ export const _orgs = [...Array(12)].map((_, index) => {
     content: CONTENT,
     candidates: CANDIDATES,
     role: _mock.role(index),
-    name: _mock.orgName(index),
+    title: _mock.orgTitle(index),
     createdAt: _mock.time(index),
     expiredDate: _mock.time(index),
     skills: ORG_SKILL_OPTIONS.slice(0, 3),

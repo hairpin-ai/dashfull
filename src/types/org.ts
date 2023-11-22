@@ -35,7 +35,7 @@ export type IOrgSalary = {
 export type IOrgItem = {
   id: string;
   role: string;
-  name: string;
+  title: string;
   content: string;
   publish: string;
   createdAt: Date;

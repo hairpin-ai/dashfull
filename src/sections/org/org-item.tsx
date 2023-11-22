@@ -32,7 +32,7 @@ type Props = {
 export default function OrgItem({ org, onView, onEdit, onDelete }: Props) {
   const popover = usePopover();
 
-  const { id, name, company, createdAt, candidates, experience, employmentTypes, salary, role } =
+  const { id, title, company, createdAt, candidates, experience, employmentTypes, salary, role } =
     org;
 
   return (
@@ -54,7 +54,7 @@ export default function OrgItem({ org, onView, onEdit, onDelete }: Props) {
             sx={{ mb: 1 }}
             primary={
               <Link component={RouterLink} href={paths.dashboard.org.details(id)} color="inherit">
-                {name}
+                {title}
               </Link>
             }
             secondary={`Posted date: ${fDate(createdAt)}`}

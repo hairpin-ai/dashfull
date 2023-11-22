@@ -172,7 +172,11 @@ export const _lastNames = [
   'Parisian',
 ];
 
-export const _orgNames = ['Organization One', 'Organization Two', 'Organization Three'];
+export const _orgTitles = [
+  'Organization Local One',
+  'Organization Local Two',
+  'Organization Local Three',
+];
 
 // ----------------------------------------------------------------------
 

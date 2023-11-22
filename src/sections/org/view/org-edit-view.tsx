@@ -4,12 +4,12 @@ import Container from '@mui/material/Container';
 
 import { paths } from 'src/routes/paths';
 
-import { _jobs } from 'src/_mock';
+import { _orgs } from 'src/_mock';
 
 import { useSettingsContext } from 'src/components/settings';
 import CustomBreadcrumbs from 'src/components/custom-breadcrumbs';
 
-import JobNewEditForm from '../job-new-edit-form';
+import OrgNewEditForm from '../org-new-edit-form';
 
 // ----------------------------------------------------------------------
 
@@ -17,10 +17,10 @@ type Props = {
   id: string;
 };
 
-export default function JobEditView({ id }: Props) {
+export default function OrgEditView({ id }: Props) {
   const settings = useSettingsContext();
 
-  const currentJob = _jobs.find((job) => job.id === id);
+  const currentOrg = _orgs.find((org) => org.id === id);
 
   return (
     <Container maxWidth={settings.themeStretch ? false : 'lg'}>
@@ -32,17 +32,17 @@ export default function JobEditView({ id }: Props) {
             href: paths.dashboard.root,
           },
           {
-            name: 'Job',
-            href: paths.dashboard.job.root,
+            name: 'Org',
+            href: paths.dashboard.org.root,
           },
-          { name: currentJob?.title },
+          { name: currentOrg?.title },
         ]}
         sx={{
           mb: { xs: 3, md: 5 },
         }}
       />
 
-      <JobNewEditForm currentJob={currentJob} />
+      <OrgNewEditForm currentOrg={currentOrg} />
     </Container>
   );
 }

@@ -8,14 +8,14 @@ import Container from '@mui/material/Container';
 
 import { paths } from 'src/routes/paths';
 
-import { _jobs, JOB_DETAILS_TABS, JOB_PUBLISH_OPTIONS } from 'src/_mock';
+import { _orgs, ORG_DETAILS_TABS, ORG_PUBLISH_OPTIONS } from 'src/_mock';
 
 import Label from 'src/components/label';
 import { useSettingsContext } from 'src/components/settings';
 
-import JobDetailsToolbar from '../job-details-toolbar';
-import JobDetailsContent from '../job-details-content';
-import JobDetailsCandidates from '../job-details-candidates';
+import OrgDetailsToolbar from '../org-details-toolbar';
+import OrgDetailsContent from '../org-details-content';
+import OrgDetailsCandidates from '../org-details-candidates';
 
 // ----------------------------------------------------------------------
 
@@ -23,12 +23,12 @@ type Props = {
   id: string;
 };
 
-export default function JobDetailsView({ id }: Props) {
+export default function OrgDetailsView({ id }: Props) {
   const settings = useSettingsContext();
 
-  const currentJob = _jobs.filter((job) => job.id === id)[0];
+  const currentOrg = _orgs.filter((org) => org.id === id)[0];
 
-  const [publish, setPublish] = useState(currentJob?.publish);
+  const [publish, setPublish] = useState(currentOrg?.publish);
 
   const [currentTab, setCurrentTab] = useState('content');
 
@@ -48,7 +48,7 @@ export default function JobDetailsView({ id }: Props) {
         mb: { xs: 3, md: 5 },
       }}
     >
-      {JOB_DETAILS_TABS.map((tab) => (
+      {ORG_DETAILS_TABS.map((tab) => (
         <Tab
           key={tab.value}
           iconPosition="end"
@@ -56,7 +56,7 @@ export default function JobDetailsView({ id }: Props) {
           label={tab.label}
           icon={
             tab.value === 'candidates' ? (
-              <Label variant="filled">{currentJob?.candidates.length}</Label>
+              <Label variant="filled">{currentOrg?.candidates.length}</Label>
             ) : (
               ''
             )
@@ -68,19 +68,19 @@ export default function JobDetailsView({ id }: Props) {
 
   return (
     <Container maxWidth={settings.themeStretch ? false : 'lg'}>
-      <JobDetailsToolbar
-        backLink={paths.dashboard.job.root}
-        editLink={paths.dashboard.job.edit(`${currentJob?.id}`)}
+      <OrgDetailsToolbar
+        backLink={paths.dashboard.org.root}
+        editLink={paths.dashboard.org.edit(`${currentOrg?.id}`)}
         liveLink="#"
         publish={publish || ''}
         onChangePublish={handleChangePublish}
-        publishOptions={JOB_PUBLISH_OPTIONS}
+        publishOptions={ORG_PUBLISH_OPTIONS}
       />
       {renderTabs}
 
-      {currentTab === 'content' && <JobDetailsContent job={currentJob} />}
+      {currentTab === 'content' && <OrgDetailsContent org={currentOrg} />}
 
-      {currentTab === 'candidates' && <JobDetailsCandidates candidates={currentJob?.candidates} />}
+      {currentTab === 'candidates' && <OrgDetailsCandidates candidates={currentOrg?.candidates} />}
     </Container>
   );
 }
