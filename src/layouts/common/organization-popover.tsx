@@ -35,7 +35,7 @@ export default function OrganizationPopover() {
           justifyContent: 'space-between',
         }}
       >
-        {_orgs[1].name}
+        {_orgs[1].title}
       </Button>
 
       <CustomPopover
@@ -61,7 +61,7 @@ export default function OrganizationPopover() {
           {_orgs.map((org) => (
             <MenuItem key={org.id} sx={{ p: 1.5 }}>
               <ListItemText
-                primary={org.name}
+                primary={org.title}
                 primaryTypographyProps={{ typography: 'subtitle2' }}
                 secondaryTypographyProps={{
                   typography: 'caption',
