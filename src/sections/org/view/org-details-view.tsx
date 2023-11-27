@@ -13,9 +13,9 @@ import { _orgs, ORG_DETAILS_TABS, ORG_PUBLISH_OPTIONS } from 'src/_mock';
 import Label from 'src/components/label';
 import { useSettingsContext } from 'src/components/settings';
 
+import OrgDetailsTeams from '../org-details-teams';
 import OrgDetailsToolbar from '../org-details-toolbar';
 import OrgDetailsContent from '../org-details-content';
-import OrgDetailsCandidates from '../org-details-candidates';
 
 // ----------------------------------------------------------------------
 
@@ -55,11 +55,7 @@ export default function OrgDetailsView({ id }: Props) {
           value={tab.value}
           label={tab.label}
           icon={
-            tab.value === 'candidates' ? (
-              <Label variant="filled">{currentOrg?.candidates.length}</Label>
-            ) : (
-              ''
-            )
+            tab.value === 'teams' ? <Label variant="filled">{currentOrg?.teams.length}</Label> : ''
           }
         />
       ))}
@@ -80,7 +76,7 @@ export default function OrgDetailsView({ id }: Props) {
 
       {currentTab === 'content' && <OrgDetailsContent org={currentOrg} />}
 
-      {currentTab === 'candidates' && <OrgDetailsCandidates candidates={currentOrg?.candidates} />}
+      {currentTab === 'teams' && <OrgDetailsTeams teams={currentOrg?.teams} />}
     </Container>
   );
 }

@@ -6,7 +6,7 @@ import { _mock } from './_mock';
 
 export const ORG_DETAILS_TABS = [
   { value: 'content', label: 'org Content' },
-  { value: 'candidates', label: 'Candidates' },
+  { value: 'teams', label: 'Teams' },
 ];
 
 export const ORG_SKILL_OPTIONS = [
@@ -79,7 +79,7 @@ export const ORG_SORT_OPTIONS = [
   { value: 'oldest', label: 'Oldest' },
 ];
 
-const CANDIDATES = [...Array(12)].map((_, index) => ({
+const TEAMS = [...Array(12)].map((_, index) => ({
   id: _mock.id(index),
   role: _mock.role(index),
   name: _mock.fullName(index),
@@ -87,7 +87,7 @@ const CANDIDATES = [...Array(12)].map((_, index) => ({
 }));
 
 const CONTENT = `
-<h6>org Description</h6>
+<h6>Organization Description</h6>
 <br/>
 
 <p>Occaecati est et illo quibusdam accusamus qui. Incidunt aut et molestiae ut facere aut. Est quidem iusto praesentium excepturi harum nihil tenetur facilis. Ut omnis voluptates nihil accusantium doloribus eaque debitis.</p>
@@ -109,21 +109,9 @@ const CONTENT = `
 
 <br/>
 <br/>
-
-<h6>Why You'll Love Working Here</h6>
-<br/>
-<ul>
-  <li>Working with agency for design drawing detail, quotation and local production.</li>
-  <li>Produce window displays, signs, interior displays, floor plans and special promotions displays.</li>
-  <li>Change displays to promote new product launches and reflect festive or seasonal themes.</li>
-  <li>Planning and executing the open/renovation/ closing store procedure.</li>
-  <li>Follow‐up store maintenance procedure and keep updating SKU In &amp; Out.</li>
-  <li>Monitor costs and work within budget.</li>
-  <li>Liaise with suppliers and source elements.</li>
-</ul>
 `;
 
-export const _orgs = [...Array(12)].map((_, index) => {
+export const _orgs = [...Array(3)].map((_, index) => {
   const publish = index % 3 ? 'published' : 'draft';
 
   const salary = {
@@ -148,10 +136,18 @@ export const _orgs = [...Array(12)].map((_, index) => {
     fullAddress: _mock.fullAddress(index),
   };
 
+  const org = {
+    orgTitle: _mock.orgTitle(index),
+    logo: _mock.image.org(index),
+    phoneNumber: _mock.phoneNumber(index),
+    fullAddress: _mock.fullAddress(index),
+  };
+
   const locations = countries.slice(1, index + 2).map((option) => option.label);
 
   return {
     id: _mock.id(index),
+    org,
     salary,
     publish,
     company,
@@ -160,7 +156,7 @@ export const _orgs = [...Array(12)].map((_, index) => {
     experience,
     employmentTypes,
     content: CONTENT,
-    candidates: CANDIDATES,
+    teams: TEAMS,
     role: _mock.role(index),
     title: _mock.orgTitle(index),
     createdAt: _mock.time(index),

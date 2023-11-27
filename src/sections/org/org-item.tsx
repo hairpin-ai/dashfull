@@ -32,8 +32,7 @@ type Props = {
 export default function OrgItem({ org, onView, onEdit, onDelete }: Props) {
   const popover = usePopover();
 
-  const { id, title, company, createdAt, candidates, experience, employmentTypes, salary, role } =
-    org;
+  const { id, title, company, createdAt, teams, experience, employmentTypes, salary, role } = org;
 
   return (
     <>
@@ -76,7 +75,7 @@ export default function OrgItem({ org, onView, onEdit, onDelete }: Props) {
             sx={{ color: 'primary.main', typography: 'caption' }}
           >
             <Iconify width={16} icon="solar:users-group-rounded-bold" />
-            {candidates.length} Candidates
+            {teams.length} Teams
           </Stack>
         </Stack>
 

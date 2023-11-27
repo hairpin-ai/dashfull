@@ -1,15 +1,21 @@
 import { m } from 'framer-motion';
 
 import { Box } from '@mui/material';
+import Link from '@mui/material/Link';
 import Button from '@mui/material/Button';
 import MenuItem from '@mui/material/MenuItem';
 import ListItemText from '@mui/material/ListItemText';
+
+import { paths } from 'src/routes/paths';
+import { RouterLink } from 'src/routes/components';
 
 import { _orgs } from 'src/_mock/_org';
 
 import Iconify from 'src/components/iconify';
 import Scrollbar from 'src/components/scrollbar';
 import CustomPopover, { usePopover } from 'src/components/custom-popover';
+
+// import { IOrgItem } from 'src/types/org';
 
 // ----------------------------------------------------------------------
 
@@ -47,8 +53,9 @@ export default function OrganizationPopover() {
         <Box sx={{ p: 1 }}>
           <Button
             variant="contained"
-            endIcon={<Iconify icon="ri:add-box-fill" />}
-            color="primary"
+            endIcon={<Iconify icon="mingcute:add-line" />}
+            component={RouterLink}
+            href={paths.dashboard.org.new}
             onClick={popover.onClose}
             sx={{ width: '100%', justifyContent: 'space-between' }}
           >
@@ -61,7 +68,15 @@ export default function OrganizationPopover() {
           {_orgs.map((org) => (
             <MenuItem key={org.id} sx={{ p: 1.5 }}>
               <ListItemText
-                primary={org.title}
+                primary={
+                  <Link
+                    component={RouterLink}
+                    href={paths.dashboard.org.details(org.id)}
+                    color="inherit"
+                  >
+                    {org.title}
+                  </Link>
+                }
                 primaryTypographyProps={{ typography: 'subtitle2' }}
                 secondaryTypographyProps={{
                   typography: 'caption',

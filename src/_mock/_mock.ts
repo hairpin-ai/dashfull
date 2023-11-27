@@ -73,5 +73,6 @@ export const _mock = {
     company: (index: number) => `${ASSETS_API}/assets/images/company/company_${index + 1}.png`,
     product: (index: number) => `${ASSETS_API}/assets/images/m_product/product_${index + 1}.jpg`,
     portrait: (index: number) => `${ASSETS_API}/assets/images/portrait/portrait_${index + 1}.jpg`,
+    org: (index: number) => `${ASSETS_API}/assets/images/org/org_${index + 1}.png`,
   },
 };

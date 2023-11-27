@@ -9,15 +9,15 @@ import ListItemText from '@mui/material/ListItemText';
 
 import Iconify from 'src/components/iconify';
 
-import { IOrgCandidate } from 'src/types/org';
+import { IOrgTeam } from 'src/types/org';
 
 // ----------------------------------------------------------------------
 
 type Props = {
-  candidates: IOrgCandidate[];
+  teams: IOrgTeam[];
 };
 
-export default function OrgDetailsCandidates({ candidates }: Props) {
+export default function OrgDetailsTeams({ teams }: Props) {
   return (
     <Box
       gap={3}
@@ -27,18 +27,18 @@ export default function OrgDetailsCandidates({ candidates }: Props) {
         md: 'repeat(3, 1fr)',
       }}
     >
-      {candidates.map((candidate) => (
-        <Stack component={Card} direction="row" spacing={2} key={candidate.id} sx={{ p: 3 }}>
+      {teams.map((team) => (
+        <Stack component={Card} direction="row" spacing={2} key={team.id} sx={{ p: 3 }}>
           <IconButton sx={{ position: 'absolute', top: 8, right: 8 }}>
             <Iconify icon="eva:more-vertical-fill" />
           </IconButton>
 
-          <Avatar alt={candidate.name} src={candidate.avatarUrl} sx={{ width: 48, height: 48 }} />
+          <Avatar alt={team.name} src={team.avatarUrl} sx={{ width: 48, height: 48 }} />
 
           <Stack spacing={2}>
             <ListItemText
-              primary={candidate.name}
-              secondary={candidate.role}
+              primary={team.name}
+              secondary={team.role}
               secondaryTypographyProps={{
                 mt: 0.5,
                 component: 'span',

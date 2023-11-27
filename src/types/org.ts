@@ -12,7 +12,7 @@ export type IOrgFilters = {
 
 // ----------------------------------------------------------------------
 
-export type IOrgCandidate = {
+export type IOrgTeam = {
   id: string;
   name: string;
   role: string;
@@ -49,5 +49,5 @@ export type IOrgItem = {
   company: IOrgCompany;
   employmentTypes: string[];
   workingSchedule: string[];
-  candidates: IOrgCandidate[];
+  teams: IOrgTeam[];
 };

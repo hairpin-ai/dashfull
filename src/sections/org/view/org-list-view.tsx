@@ -161,7 +161,7 @@ export default function OrgListView() {
   return (
     <Container maxWidth={settings.themeStretch ? false : 'lg'}>
       <CustomBreadcrumbs
-        heading="List"
+        heading="Organizations"
         links={[
           { name: 'Dashboard', href: paths.dashboard.root },
           {
@@ -177,7 +177,7 @@ export default function OrgListView() {
             variant="contained"
             startIcon={<Iconify icon="mingcute:add-line" />}
           >
-            New Org
+            ADD ORGANIZATON
           </Button>
         }
         sx={{
