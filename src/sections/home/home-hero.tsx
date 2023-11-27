@@ -189,7 +189,7 @@ export default function HomeHero() {
             textAlign: 'center',
           }}
         >
-          Stage
+          Stage One
         </Typography>
       </m.div>
 
