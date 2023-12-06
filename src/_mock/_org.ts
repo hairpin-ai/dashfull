@@ -1,3 +1,5 @@
+import { subDays } from 'date-fns';
+
 import { countries } from 'src/assets/data';
 
 import { _mock } from './_mock';
@@ -92,20 +94,7 @@ const CONTENT = `
 
 <p>Occaecati est et illo quibusdam accusamus qui. Incidunt aut et molestiae ut facere aut. Est quidem iusto praesentium excepturi harum nihil tenetur facilis. Ut omnis voluptates nihil accusantium doloribus eaque debitis.</p>
 
-<br/>
-<br/>
 
-<h6>Key Responsibilities</h6>
-<br/>
-<ul>
-  <li>Working with agency for design drawing detail, quotation and local production.</li>
-  <li>Produce window displays, signs, interior displays, floor plans and special promotions displays.</li>
-  <li>Change displays to promote new product launches and reflect festive or seasonal themes.</li>
-  <li>Planning and executing the open/renovation/ closing store procedure.</li>
-  <li>Follow‐up store maintenance procedure and keep updating SKU In &amp; Out.</li>
-  <li>Monitor costs and work within budget.</li>
-  <li>Liaise with suppliers and source elements.</li>
-</ul>
 
 <br/>
 <br/>
@@ -140,7 +129,14 @@ export const _orgs = [...Array(3)].map((_, index) => {
     orgTitle: _mock.orgTitle(index),
     logo: _mock.image.org(index),
     phoneNumber: _mock.phoneNumber(index),
-    fullAddress: _mock.fullAddress(index),
+    address: _mock.fullAddress(index),
+  };
+
+  const system = {
+    systemTitle: _mock.systemTitle(index),
+    systemNumber: _mock.systemNumber(index),
+    sysytemDescription: _mock.systemDescription(index),
+    createDate: subDays(new Date(), index),
   };
 
   const locations = countries.slice(1, index + 2).map((option) => option.label);
@@ -164,5 +160,8 @@ export const _orgs = [...Array(3)].map((_, index) => {
     skills: ORG_SKILL_OPTIONS.slice(0, 3),
     totalViews: _mock.number.nativeL(index),
     workingSchedule: ORG_WORKING_SCHEDULE_OPTIONS.slice(0, 2),
+    fullAddress: _mock.fullAddress(index),
+    phoneNumber: _mock.phoneNumber(index),
+    system,
   };
 });

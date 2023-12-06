@@ -30,7 +30,7 @@ export default function OrgDetailsContent({ org }: Props) {
     benefits,
     createdAt,
     experience,
-    expiredDate,
+
     employmentTypes,
   } = org;
 
@@ -41,7 +41,7 @@ export default function OrgDetailsContent({ org }: Props) {
       <Markdown children={content} />
 
       <Stack spacing={2}>
-        <Typography variant="h6">Skills</Typography>
+        <Typography variant="h6">Systems</Typography>
         <Stack direction="row" alignItems="center" spacing={1}>
           {skills.map((skill) => (
             <Chip key={skill} label={skill} variant="soft" />
@@ -64,16 +64,6 @@ export default function OrgDetailsContent({ org }: Props) {
     <Stack component={Card} spacing={2} sx={{ p: 3 }}>
       {[
         {
-          label: 'Date Posted',
-          value: fDate(createdAt),
-          icon: <Iconify icon="solar:calendar-date-bold" />,
-        },
-        {
-          label: 'Expiration date',
-          value: fDate(expiredDate),
-          icon: <Iconify icon="solar:calendar-date-bold" />,
-        },
-        {
           label: 'Employment type',
           value: employmentTypes,
           icon: <Iconify icon="solar:clock-circle-bold" />,
@@ -87,6 +77,11 @@ export default function OrgDetailsContent({ org }: Props) {
           label: 'Experience',
           value: experience,
           icon: <Iconify icon="carbon:skill-level-basic" />,
+        },
+        {
+          label: 'Formation Date',
+          value: fDate(createdAt),
+          icon: <Iconify icon="solar:calendar-date-bold" />,
         },
       ].map((item) => (
         <Stack key={item.label} spacing={1.5} direction="row">
@@ -126,8 +121,8 @@ export default function OrgDetailsContent({ org }: Props) {
       />
 
       <Stack spacing={1}>
-        <Typography variant="subtitle1">{org.company.name}</Typography>
-        <Typography variant="body2">{org.company.fullAddress}</Typography>
+        <Typography variant="subtitle1">{org.title}</Typography>
+        <Typography variant="body2">{org.fullAddress}</Typography>
         <Typography variant="body2">{org.company.phoneNumber}</Typography>
       </Stack>
     </Stack>

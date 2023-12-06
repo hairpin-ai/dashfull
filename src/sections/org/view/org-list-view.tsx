@@ -177,7 +177,7 @@ export default function OrgListView() {
             variant="contained"
             startIcon={<Iconify icon="mingcute:add-line" />}
           >
-            ADD ORGANIZATON
+            Add Organization
           </Button>
         }
         sx={{

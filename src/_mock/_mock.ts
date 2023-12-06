@@ -28,6 +28,9 @@ import {
   _productNames,
   _descriptions,
   _phoneNumbers,
+  _systemTitles,
+  _systemNumbers,
+  _systemDescriptions,
 } from './assets';
 
 // ----------------------------------------------------------------------
@@ -65,6 +68,12 @@ export const _mock = {
     nativeM: (index: number) => _nativeM[index],
     nativeL: (index: number) => _nativeL[index],
   },
+  // System
+
+  systemTitle: (index: number) => _systemTitles[index],
+  systemDescription: (index: number) => _systemDescriptions[index],
+  systemNumber: (index: number) => _systemNumbers[index],
+
   // Image
   image: {
     cover: (index: number) => `${ASSETS_API}/assets/images/cover/cover_${index + 1}.jpg`,

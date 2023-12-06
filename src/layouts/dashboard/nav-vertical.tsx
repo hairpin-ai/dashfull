@@ -56,7 +56,7 @@ export default function NavVertical({ openNav, onCloseNav }: Props) {
       }}
     >
       <Stack
-        mt={0}
+        mt={0.5}
         p={2}
         flexGrow={0}
         direction="column"

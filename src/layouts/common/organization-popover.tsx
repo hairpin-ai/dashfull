@@ -1,7 +1,6 @@
 import { m } from 'framer-motion';
 
 import { Box } from '@mui/material';
-import Link from '@mui/material/Link';
 import Button from '@mui/material/Button';
 import MenuItem from '@mui/material/MenuItem';
 import ListItemText from '@mui/material/ListItemText';
@@ -25,19 +24,14 @@ export default function OrganizationPopover() {
   return (
     <>
       <Button
-        variant="outlined"
-        endIcon={<Iconify icon="ri:arrow-drop-down-line" />}
-        size="large"
+        variant="contained"
+        endIcon={<Iconify icon="eva:arrow-ios-downward-fill" />}
         fullWidth
-        color="primary"
+        // color="primary"
         component={m.button}
         whileTap="tap"
         onClick={popover.onOpen}
         sx={{
-          ...(popover.open && {
-            bgcolor: (theme) => theme.palette.action.selected,
-          }),
-
           justifyContent: 'space-between',
         }}
       >
@@ -52,7 +46,7 @@ export default function OrganizationPopover() {
       >
         <Box sx={{ p: 1 }}>
           <Button
-            variant="contained"
+            variant="outlined"
             endIcon={<Iconify icon="mingcute:add-line" />}
             component={RouterLink}
             href={paths.dashboard.org.new}
@@ -60,29 +54,19 @@ export default function OrganizationPopover() {
             sx={{ width: '100%', justifyContent: 'space-between' }}
           >
             {' '}
-            ADD ORGANIZATION{' '}
+            Add Organization{' '}
           </Button>
         </Box>
 
-        <Scrollbar sx={{ height: 320 }}>
+        <Scrollbar sx={{ maxHeight: 320, pb: 2 }}>
           {_orgs.map((org) => (
-            <MenuItem key={org.id} sx={{ p: 1.5 }}>
-              <ListItemText
-                primary={
-                  <Link
-                    component={RouterLink}
-                    href={paths.dashboard.org.details(org.id)}
-                    color="inherit"
-                  >
-                    {org.title}
-                  </Link>
-                }
-                primaryTypographyProps={{ typography: 'subtitle2' }}
-                secondaryTypographyProps={{
-                  typography: 'caption',
-                  color: 'text.disabled',
-                }}
-              />
+            <MenuItem
+              key={org.id}
+              sx={{ p: 1.5 }}
+              component={RouterLink}
+              href={paths.dashboard.org.details(org.id)}
+            >
+              <ListItemText primary={org.title} />
             </MenuItem>
           ))}
         </Scrollbar>

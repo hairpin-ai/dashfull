@@ -50,4 +50,5 @@ export type IOrgItem = {
   employmentTypes: string[];
   workingSchedule: string[];
   teams: IOrgTeam[];
+  fullAddress: string;
 };

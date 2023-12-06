@@ -177,6 +177,17 @@ export const _orgTitles = [
   'Organization Local Two',
   'Organization Local Three',
 ];
+// Systems ----------------------------------------------------------------------
+
+export const _systemTitles = ['System Title One', 'System Title Two', 'System Title Three'];
+
+export const _systemDescriptions = [
+  'System description one',
+  'System description two',
+  'System description three',
+];
+
+export const _systemNumbers = ['001', '002', '003'];
 
 // ----------------------------------------------------------------------
 
